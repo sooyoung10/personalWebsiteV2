@@ -1,3 +1,21 @@
-h2 {
+p {
+    margin-top: 1%;
     text-align: center;
+    font-size: 2vw;
+}
+
+.links {
+    text-align: center;
+    margin-top: 10%;
+}
+
+img {
+    margin: 3%;
+    width: 3%;
+    height: auto;
+    opacity: 0.4;
+}
+
+img:hover {
+    opacity: 1;
 }
