@@ -1,0 +1,44 @@
+ul {
+    list-style-type: none;
+    margin-top: 25%;
+}
+
+li {
+    margin-top: 15px;
+}
+
+a, a:visited {
+    color: grey;
+    font-size: 2vw;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+}
+
+.container {
+    position: absolute;
+    width: 30%;
+    height: auto;
+    overflow: auto;
+    margin-left: 35%;
+    margin-right: 35%;
+    top: 32%;
+}
+
+.logo {
+    float: left;
+    width: 60%;
+    height: auto;
+}
+
+.menu {
+    float: left;
+    width: 40%;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
