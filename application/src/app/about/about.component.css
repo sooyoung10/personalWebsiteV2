@@ -3,3 +3,14 @@ p {
     text-align: center;
     font-size: 2vw;
 }
+
+div.story {
+    width: 50%;
+    margin-left: 25%;
+}
+
+div.story p {
+    line-height: 130%;
+    font-size: 1vw;
+    text-align: left;
+}
