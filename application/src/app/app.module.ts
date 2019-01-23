@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { MusicComponent } from './music/music.component';
 import { PhotosComponent } from './photos/photos.component';
+import { HttpClientModule } from '@angular/common/http'; 
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { PhotosComponent } from './photos/photos.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {
         path: 'links',
@@ -46,7 +48,7 @@ import { PhotosComponent } from './photos/photos.component';
       }
     ])
   ],
-  providers: [],
+  providers: [MusicComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
