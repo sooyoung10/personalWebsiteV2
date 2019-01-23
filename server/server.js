@@ -10,16 +10,11 @@ const app = express();
 
 app.use(bodyParser.json());
 
-// spotifyApi.getUserPlaylists('1254470963')
-//   .then(function(data) {
-//     console.log('Retrieved playlists', data.body);
-//   },function(err) {
-//     console.log('Something went wrong!', err);
-//  });
+
 
 app.get('/api/getPlayLists', (req, res) => {
 
-	spotifyApi.clientCredentialsGrant() .then(function(data) {
+	spotifyApi.clientCredentialsGrant().then(function(data) {
 
 	    spotifyApi.setAccessToken(data.body['access_token']);
 
@@ -34,9 +29,29 @@ app.get('/api/getPlayLists', (req, res) => {
         console.log('Something went wrong when retrieving an access token', err);
     });
 
-
 });
 
+
+app.post('/api/getTracks', (req, res) => {
+
+	//playlistID = req.body['playlistID'];
+
+	spotifyApi.clientCredentialsGrant().then(function(data) {
+
+	    spotifyApi.setAccessToken(data.body['access_token']);
+
+	    spotifyApi.getPlaylist('3xxnAuJ8yHmU0duv2vykJN').then(function(data) {
+
+		    res.send(data.body);
+
+		},function(err) {
+		    console.log('Something went wrong!', err);
+		});
+  	}, function(err) {
+        console.log('Something went wrong when retrieving an access token', err);
+    });
+
+});
 
 
 

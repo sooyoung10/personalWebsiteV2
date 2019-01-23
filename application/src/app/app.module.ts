@@ -48,7 +48,7 @@ import { HttpClientModule } from '@angular/common/http';
       }
     ])
   ],
-  providers: [MusicComponent],
+  providers: [MusicComponent, PhotosComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

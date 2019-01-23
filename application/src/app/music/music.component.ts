@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Playlist } from '../../playlist';
 
 @Component({
   selector: 'app-music',
@@ -8,24 +9,38 @@ import { HttpClient } from '@angular/common/http';
 })
 export class MusicComponent implements OnInit {
 
-  listOfNames = [];
+  listOfPlaylists = [];
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.getPlaylists()
+    this.getMyPlaylists()
+  }
+
+  getMyPlaylists() {
+
+    return this.http.get('/api/getPlayLists').subscribe(data => {
+
+      for (let item of data['items']) {
+
+        var name = item['name'];
+        var url = item['tracks']['href'];
+        var id = String(url).substring(37, String(url).length-7);
+        var temp = new Playlist(name, id);
+        this.listOfPlaylists.push(temp);
+      }
+    })
   }
 
 
-  getPlaylists() {
-    return this.http.get('/api/getPlayLists').subscribe(data => {
+  getTracks(playlistID) {
 
-      console.log("Data: " , data);
+    console.log("hiii")
+    console.log(playlistID)
 
-      for (let item of data['items']) {
-        console.log(item['name']);
-      }
+    return this.http.post('/api/getTracks', {playlistID}).subscribe(data => {
 
+      console.log(data)
 
     })
   }
