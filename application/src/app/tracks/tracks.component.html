@@ -1,0 +1,19 @@
+<app-menu-bar></app-menu-bar>
+<p>{{ playlistName }}</p>
+
+
+<div class="grid-container">
+
+  <div class="grid-item" *ngFor="let track of listOfTracks"> 
+
+
+      <div>{{ track.name }}</div>
+      <div>{{ track.artists }}</div>
+      <!-- <audio hidden autoplay="autoplay" controls="controls">  
+        <source src="music.ogg" />  
+        <source src="music.mp3" />  
+      </audio>  -->
+
+  </div>
+
+</div>

@@ -34,13 +34,13 @@ app.get('/api/getPlayLists', (req, res) => {
 
 app.post('/api/getTracks', (req, res) => {
 
-	//playlistID = req.body['playlistID'];
+	ID = req.body.playlistID;
 
 	spotifyApi.clientCredentialsGrant().then(function(data) {
 
 	    spotifyApi.setAccessToken(data.body['access_token']);
 
-	    spotifyApi.getPlaylist('3xxnAuJ8yHmU0duv2vykJN').then(function(data) {
+	    spotifyApi.getPlaylist(ID).then(function(data) {
 
 		    res.send(data.body);
 
@@ -52,8 +52,6 @@ app.post('/api/getTracks', (req, res) => {
     });
 
 });
-
-
 
 
 

@@ -5,9 +5,10 @@
 
     <div class="grid-item" *ngFor="let playlist of listOfPlaylists"> 
 
-        <button type="button" (click)="getTracks(playlist.id)">{{ playlist.name }}</button>
-        <!-- {{ playlist.name }} -->
-        
+        <a routerLink="/tracks" [queryParams]="{name: playlist.name, id: playlist.id}">
+            {{ playlist.name }}
+        </a>
+
     </div>
 
 </div>

@@ -9,7 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { MusicComponent } from './music/music.component';
 import { PhotosComponent } from './photos/photos.component';
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule } from '@angular/common/http';
+import { TracksComponent } from './tracks/tracks.component'; 
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     AboutComponent,
     MusicComponent,
-    PhotosComponent
+    PhotosComponent,
+    TracksComponent
   ],
   imports: [
     BrowserModule,
@@ -43,12 +45,16 @@ import { HttpClientModule } from '@angular/common/http';
         component: MusicComponent
       },
       {
+        path: 'tracks',
+        component: TracksComponent
+      },
+      {
         path: '',
         component: HomeComponent
       }
     ])
   ],
-  providers: [MusicComponent, PhotosComponent],
+  providers: [MusicComponent, PhotosComponent, TracksComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

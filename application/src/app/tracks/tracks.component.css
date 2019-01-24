@@ -7,20 +7,12 @@ p {
 
 .grid-container {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 33% 34% 33%;
+    margin-bottom: 2%;
 }
 
 .grid-item {
-    text-align: center;
     margin-bottom: 5%;
     font-size: 1vw;
-}
-
-a {
-    text-decoration: none;
-    color: grey;
-}
-
-a:hover {
-    color: white;
+    text-align: center;
 }

@@ -32,17 +32,4 @@ export class MusicComponent implements OnInit {
     })
   }
 
-
-  getTracks(playlistID) {
-
-    console.log("hiii")
-    console.log(playlistID)
-
-    return this.http.post('/api/getTracks', {playlistID}).subscribe(data => {
-
-      console.log(data)
-
-    })
-  }
-
 }
